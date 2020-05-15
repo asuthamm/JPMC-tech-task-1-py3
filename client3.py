@@ -31,7 +31,7 @@ N = 500
 
 def getDataPoint(quote):
 	""" Produce all of the needed values to generate a datapoint """
-	""" ------------- Update this function ------------- """
+	""" ------------- Update computed price ------------- """
 	stock = quote['stock']
 	bid_price = float(quote['top_bid']['price'])
 	ask_price = float(quote['top_ask']['price'])
@@ -40,8 +40,8 @@ def getDataPoint(quote):
 
 def getRatio(price_a, price_b):
 	""" Get ratio of price_a and price_b """
-	""" ------------- Update this function ------------- """
-	""" Also create some unit tests for this function in client_test.py """
+	""" ------------- Update the return of ratio ------------- """
+	""" prevent edge case of dividing by zero  """
 	if (price_b == 0):
 		return
 	return price_a/price_b
@@ -61,3 +61,4 @@ if __name__ == "__main__":
 			print ("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
 
 		print ("Ratio %s" % (getRatio(prices['ABC'], prices['DEF'])))
+		print ("-")
